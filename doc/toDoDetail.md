@@ -1,3 +1,49 @@
+## Phases
+
+### Phase I
+
+* alle Views
+* alle View Models
+* Navigation
+* Note Typ
+* "Dummy" NoteService mit Fixen Daten
+
+Endtermin: Freitag Morgen ca 1100
+Ergebnis: Komplett Navigierbare App
+
+### Phase II
+
+* NoteDataAccess
+* NoteService mit DataAccess kommunizieren lassen
+
+Endtermin: Freitag Morgen ca 1130
+Ergebnis: App mit der möglichkeit Daten hinzu zu fügen und zu löschen
+
+### Phase III
+
+* Zu Favoritenhinzufügen
+* Anzeige des Favoriten Flag auf der MasterPage
+
+Endtermin: Freitag Mittag ca 1430
+Ergebnis: Favoriten setzen und diese mit Priorität in der Liste anzeigen
+
+### Phase IV
+
+* PhotoService
+* Anbindung PhotoService an Detail und Edit Page
+
+Endtermin: Freitag Nachmittag 1600
+Ergebnis: Bild zu einer Notiz hinzufügen können und diese bei Bedarf ändern.
+
+### Phase V
+
+* Rey Appicon
+
+Endtermin: Freitag Nachmittag: 1630
+Ergebnis: App mit Rey Logo.
+
+
+
 ## ToDo's
 
 * Models
@@ -53,23 +99,3 @@
     * Save Button
 * Nicht Funktionale Anforderungen
   * App Icon Rey Banner (30m)
-
-## Deadlines
-
-**Do Am**  
-Done: Zeitschätzung / Planung  
-Done: Db / Data Anbindung  
-In Progress: Navigation / Views  
-
-**Do Pm**  
-//Ausser Haus Kundentermin  
-
-**Fr Am**  
-Done: Views / Navigation  
-Done: Notification Events  
-In Progress: Favoriten  
-
-**Fr Pm **  
-Done:Favoriten  
-Done: Bild hinzufügen/Löschen wenn nicht mehr gebraucht  
-Done: App Icon
