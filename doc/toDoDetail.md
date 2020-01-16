@@ -8,39 +8,39 @@
 * Note Typ
 * "Dummy" NoteService mit Fixen Daten
 
-Endtermin: Freitag Morgen ca 1100
-Ergebnis: Komplett Navigierbare App
+**Endtermin** : Freitag Morgen ca 1100  
+**Ergebnis** : Komplett Navigierbare App
 
 ### Phase II
 
 * NoteDataAccess
 * NoteService mit DataAccess kommunizieren lassen
 
-Endtermin: Freitag Morgen ca 1130
-Ergebnis: App mit der möglichkeit Daten hinzu zu fügen und zu löschen
+**Endtermin** : Freitag Morgen ca 1130  
+**Ergebnis** : App mit der möglichkeit Daten hinzu zu fügen und zu löschen
 
 ### Phase III
 
 * Zu Favoritenhinzufügen
 * Anzeige des Favoriten Flag auf der MasterPage
 
-Endtermin: Freitag Mittag ca 1430
-Ergebnis: Favoriten setzen und diese mit Priorität in der Liste anzeigen
+**Endtermin** : Freitag Mittag ca 1430  
+**Ergebnis** : Favoriten setzen und diese mit Priorität in der Liste anzeigen
 
 ### Phase IV
 
 * PhotoService
 * Anbindung PhotoService an Detail und Edit Page
 
-Endtermin: Freitag Nachmittag 1600
-Ergebnis: Bild zu einer Notiz hinzufügen können und diese bei Bedarf ändern.
+**Endtermin** : Freitag Nachmittag 1600  
+**Ergebnis** : Bild zu einer Notiz hinzufügen können und diese bei Bedarf ändern.
 
 ### Phase V
 
 * Rey Appicon
 
-Endtermin: Freitag Nachmittag: 1630
-Ergebnis: App mit Rey Logo.
+**Endtermin** : Freitag Nachmittag: 1630  
+**Ergebnis** : App mit Rey Logo.
 
 
 
