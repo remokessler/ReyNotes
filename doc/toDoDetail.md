@@ -3,7 +3,7 @@
 ### Phase I
 
 * alle Views
-* alle View Models
+* View Bindings an View Models
 * Navigation
 * Note Typ
 * "Dummy" NoteService mit Fixen Daten
