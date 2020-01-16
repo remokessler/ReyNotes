@@ -56,20 +56,20 @@
 
 ## Deadlines
 
-**Do Am** 
-Done: Zeitschätzung / Planung
-Done: Db / Data Anbindung
-In Progress: Navigation / Views
+**Do Am**  
+Done: Zeitschätzung / Planung  
+Done: Db / Data Anbindung  
+In Progress: Navigation / Views  
 
-**Do Pm**
-//Ausser Haus Kundentermin
+**Do Pm**  
+//Ausser Haus Kundentermin  
 
-**Fr Am**
-Done: Views / Navigation
-Done: Notification Events
-In Progress: Favoriten
+**Fr Am**  
+Done: Views / Navigation  
+Done: Notification Events  
+In Progress: Favoriten  
 
-**Fr Pm**
-Done:Favoriten
-Done: Bild hinzufügen/Löschen wenn nicht mehr gebraucht
+**Fr Pm **  
+Done:Favoriten  
+Done: Bild hinzufügen/Löschen wenn nicht mehr gebraucht  
 Done: App Icon
