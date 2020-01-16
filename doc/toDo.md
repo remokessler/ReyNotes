@@ -7,14 +7,14 @@
 
 ## ToDo DetailPage
 
-* Anzeigen aller Felder als Readonly
+* Anzeigen Titel/Text Felder als Readonly
 * Edit Button
 * Delete Button
 * Fav Button
 
 ## ToDo EditPage
 
-* Anzeigen aller Felder als Editierbar
+* Anzeigen Titel/Text Felder als Editierbar
 * Nav Back verwirft Changes
 * Save Button
 

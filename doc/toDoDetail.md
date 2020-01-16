@@ -26,6 +26,7 @@
     * Navigation auf Child
     * Delete Item
     * Add New Item
+    * Sortierung der Notizen nach IsFavorite --> DateEdited
     * Subscribe auf Changes von Service
   * **NotesDetailViewModel** (1h)
     * Beim Display Daten von Service beziehen
@@ -40,7 +41,7 @@
 * Views
   * **NotestMasterView** (1h 30m)
     * Darstellung aller Notes in einer Liste sortiert nach Favorite(true/false) --> DateEdited
-    * Add New Button
+    * Add New Button in NavBar rechts
     * LongPress um Löschoption einzublenden
   * **NotesDetailView** (30m)
     * Darstellung Title / Text / (Optinal)Photo im Readonly Modus
