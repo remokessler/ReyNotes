@@ -1,9 +1,5 @@
-* Models
-  * NotesDataAccess
-  * NotesService
-  * NotesUpdatedEventArgs
+* ​	Models
   * Note
-  * PhotoService
 * ViewModels
   * NotesMasterViewModel
   * NotesDetailViewModel
@@ -12,3 +8,10 @@
   * NotestMasterView
   * NotesDetailView
   * NotesEditView
+* Services
+  * NotesService
+    * NotesService
+    * NotesDataAccess
+    * NotesUpdatedEventArgs
+  * PhotoService
+    * PhotoService

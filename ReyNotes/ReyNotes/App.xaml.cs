@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace ReyNotes
 {
@@ -10,7 +8,7 @@ namespace ReyNotes
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Views.NotesMasterView());
         }
 
         protected override void OnStart()

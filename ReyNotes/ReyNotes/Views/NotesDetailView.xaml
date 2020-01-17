@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReyNotes.Views.NotesDetailView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Title}" FontSize="Title" IsEnabled="false" />
+            <Editor Text="{Binding Text}" VerticalOptions="FillAndExpand" IsEnabled="false" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Text="Delete" Command="{Binding DeleteNote}" HorizontalOptions="StartAndExpand" Margin="10,10,0,10" BackgroundColor="Tomato"/>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Favorite" />
+                    <Switch IsToggled="{Binding IsFavorite}" />
+                </StackLayout>
+                <Button Text="Edit" Command="{Binding EditMode}" HorizontalOptions="EndAndExpand" Margin="0,10,10,10"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

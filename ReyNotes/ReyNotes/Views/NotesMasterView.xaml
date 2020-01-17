@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ReyNotes.Views.NotesMasterView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Note" Command="{Binding AddNewNote}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <CollectionView SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding NotesDetailViewModels}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackLayout Orientation="Horizontal">
+                                <Button x:Name="DeleteButton" BackgroundColor="Tomato" Text="Delete" Command="{Binding DeleteNote}"/>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Title}" FontSize="Title" />
+                                    <Label Text="{Binding Text}" />
+                                </StackLayout>
+                                <Label Text="Fav"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
