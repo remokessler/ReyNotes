@@ -12,6 +12,7 @@ namespace ReyNotes.Services.Notes
             Change = c;
         }
     }
+
     public enum Change
     {
         Update,

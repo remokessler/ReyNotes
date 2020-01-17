@@ -16,6 +16,7 @@ namespace ReyNotes.Views
             _notesEditViewModel.SaveNoteNavigationBack = () => Navigation.PopAsync();
             BindingContext = _notesEditViewModel;
         }
+
         public NotesEditView()
         {
             InitializeComponent();

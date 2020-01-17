@@ -12,6 +12,7 @@ namespace ReyNotes.Services.Notes
         public static NotesDataAccess Instance => _instance ?? (_instance = new NotesDataAccess(path));
         private readonly SQLiteAsyncConnection _dataBase;
         private static readonly string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Notes.db3");
+
         private NotesDataAccess(string dbPath)
         {
             _dataBase = new SQLiteAsyncConnection(dbPath);

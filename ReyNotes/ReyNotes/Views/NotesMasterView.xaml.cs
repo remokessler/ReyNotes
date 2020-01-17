@@ -15,7 +15,6 @@ namespace ReyNotes.Views
             _notesMaterViewModel.NavigateToDetailAction = (int noteId) => Navigation.PushAsync(new NotesDetailView(noteId));
             _notesMaterViewModel.NavigateToNewPage = () => Navigation.PushAsync(new NotesEditView());
             BindingContext = _notesMaterViewModel;
-            
         }
     }
 }

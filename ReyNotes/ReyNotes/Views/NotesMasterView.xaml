@@ -15,12 +15,12 @@
                     <DataTemplate>
                         <Grid>
                             <StackLayout Orientation="Horizontal">
-                                <Button x:Name="DeleteButton" BackgroundColor="Tomato" Text="Delete" Command="{Binding DeleteNote}"/>
+                                <Button x:Name="DeleteButton" BackgroundColor="Tomato" Text="Delete" Command="{Binding DeleteNote}" IsVisible="true"/>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="{Binding Title}" FontSize="Title" />
-                                    <Label Text="{Binding Text}" />
+                                    <Label Text="{Binding Title}" FontSize="Title" LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding Text}" LineBreakMode="TailTruncation"/>
                                 </StackLayout>
-                                <Label Text="Fav"/>
+                                <Image Source="favorite.png" WidthRequest="30" VerticalOptions="Start" IsVisible="{Binding IsFavorite}"/>
                             </StackLayout>
                         </Grid>
                     </DataTemplate>
