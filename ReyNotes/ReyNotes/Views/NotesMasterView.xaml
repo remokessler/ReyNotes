@@ -10,7 +10,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <CollectionView SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding NotesDetailViewModels}" SelectionMode="Single">
+            <CollectionView SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding NotesDetailViewModels}" SelectionMode="Single" >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>

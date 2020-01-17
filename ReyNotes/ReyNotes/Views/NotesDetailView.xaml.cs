@@ -14,6 +14,7 @@ namespace ReyNotes.Views
             InitializeComponent();
             _notesDetailViewModel = new NotesDetailViewModel(NotesService.Instance.GetNoteById(noteId));
             _notesDetailViewModel.OpenInEditMode = (int id) => Navigation.PushAsync(new NotesEditView(noteId));
+            _notesDetailViewModel.NavigateAfterDelete = () => Navigation.PopAsync();
             BindingContext = _notesDetailViewModel;
         }
     }

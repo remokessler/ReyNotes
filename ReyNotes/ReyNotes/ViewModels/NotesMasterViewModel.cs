@@ -1,5 +1,4 @@
-﻿using ReyNotes.Services;
-using ReyNotes.Services.Notes;
+﻿using ReyNotes.Services.Notes;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -12,7 +11,8 @@ namespace ReyNotes.ViewModels
     public class NotesMasterViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ObservableCollection<NotesDetailViewModel> NotesDetailViewModels { get; set; }
+        public ObservableCollection<NotesDetailViewModel> NotesDetailViewModels { get;set; }
+
         private NotesDetailViewModel _selectedItem = null;
         public NotesDetailViewModel SelectedItem
         {
@@ -33,13 +33,20 @@ namespace ReyNotes.ViewModels
 
         public NotesMasterViewModel()
         {
-            NotesDetailViewModels = new ObservableCollection<NotesDetailViewModel>(
-                NotesService.Instance.GetAllNotes()
-                    .Select(n => new NotesDetailViewModel(n))
-                        .OrderBy(n => n.DateEdited));
+            RefreshNotes();
             AddNewNote = new Command(() => NavigateToNewPage());
             NotesService.Instance.NotesUpdatedEventHandler += _notesUpdatedEventHandler;
         }
+
+        private void RefreshNotes()
+        {
+            NotesDetailViewModels = new ObservableCollection<NotesDetailViewModel>(
+                NotesService.Instance.GetAllNotes()
+                    .OrderBy(n => !n.IsFavorite)
+                    .OrderByDescending(n => n.DateEdited)
+                    .Select(n => new NotesDetailViewModel(n)));
+        }
+
         private void _notesUpdatedEventHandler(object changedNote, NotesUpdatedEventArgs e)
         {
             var note = (Models.Note)changedNote;
@@ -48,18 +55,19 @@ namespace ReyNotes.ViewModels
                 case Change.Update:
                     var id = NotesDetailViewModels.IndexOf(NotesDetailViewModels.First(ndvm => ndvm.Id == note.Id));
                     NotesDetailViewModels[id] = new NotesDetailViewModel(note);
-                    PropertyChanged(NotesDetailViewModels.First(ndvm => ndvm.Id == note.Id), new PropertyChangedEventArgs(nameof(note)));
+                    PropertyChanged(NotesDetailViewModels.First(ndvm => ndvm.Id == note.Id), new PropertyChangedEventArgs(nameof(NotesDetailViewModels)));
                     break;
 
                 case Change.New:
                     NotesDetailViewModels.Add(new NotesDetailViewModel(note));
+                    PropertyChanged(NotesDetailViewModels, new PropertyChangedEventArgs(nameof(NotesDetailViewModels)));
                     break;
 
                 case Change.Delete:
                     NotesDetailViewModels.Remove(NotesDetailViewModels.First(ndvm => ndvm.Id == note.Id));
+                    PropertyChanged(NotesDetailViewModels, new PropertyChangedEventArgs(nameof(NotesDetailViewModels)));
                     break;
             }
-            PropertyChanged(changedNote, new PropertyChangedEventArgs(nameof(changedNote)));
         }
 
         private void NavigateToDetail(NotesDetailViewModel selectedItem)

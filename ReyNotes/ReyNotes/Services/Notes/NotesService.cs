@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReyNotes.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -18,15 +19,26 @@ namespace ReyNotes.Services.Notes
 
         private void RefreshNotes()
         {
-            Notes = new ObservableCollection<Models.Note>(NotesDataAccess.Instance.GetAllNotes().Result);
+            Notes = new ObservableCollection<Note>(NotesDataAccess.Instance.GetAllNotes().Result);
         }
 
-        public Models.Note GetNoteById(int id)
+        public Note GetNoteById(int id)
         {
             return NotesDataAccess.Instance.GetNoteById(id).Result;
         }
-        public void SaveNote(Models.Note note)
+
+        public void FavoriteSaveNote(Note note)
         {
+            NotesDataAccess.Instance.SaveNote(note);
+            var index = Notes.IndexOf(Notes.First(n => n.Id == note.Id));
+            Notes[index] = note;
+            NotesUpdatedEventHandler(note, new NotesUpdatedEventArgs(Change.Update));
+        }
+
+        public void SaveNote(Note note)
+        {
+            note.DateEdited = DateTime.Now;
+            if (note.DateCreated == null) note.DateCreated = DateTime.Now;
             NotesDataAccess.Instance.SaveNote(note);
             if (note.Id != 0 && Notes.Any(n => n.Id == note.Id))
             {
@@ -41,14 +53,14 @@ namespace ReyNotes.Services.Notes
             }
         }
 
-        public void DeleteNote(Models.Note note)
+        public void DeleteNote(Note note)
         {
             NotesDataAccess.Instance.DeleteNote(note);
             Notes.Remove(note);
             NotesUpdatedEventHandler(note, new NotesUpdatedEventArgs(Change.Delete));
         }
 
-        public ObservableCollection<Models.Note> GetAllNotes()
+        public ObservableCollection<Note> GetAllNotes()
         {
             return Notes;
         }
